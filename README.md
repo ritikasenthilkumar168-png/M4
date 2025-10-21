@@ -10,25 +10,24 @@ To write a C Program to perform the basic left shift operation for 44 integer nu
 5.	Stop the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
 
+int main() 
+{
+    
+    int a = 44; 
+    int b = 3;   
+    int result = a << b;
+    printf("The result of left shifting %d by %d is: %d\n", a, b, result);
+    return 0;
+}
+```
 ## OUTPUT
-
-
-
-
-
-
-
-
+![alt text](<WhatsApp Image 2025-10-21 at 15.40.55_3fb82562 copy.jpg>)
 
 ## RESULT
 Thus the program to perform the basic left shift operation for 44 integer number with 3 shifts has been executed successfully.
-
-
-
-
- 
- 
 
 
 # EX-17-TWO-NUMBERS-ARE-EQUAL-OR-NOT
@@ -48,8 +47,27 @@ Write a C Program to check whether the two numbers are equal or not using simple
 
 ## PROGRAM
 
+```
+#include <stdio.h>
 
+int main() {
+    
+    int num1, num2;
+    scanf("%d%d", &num1,&num2);
+    if (num1 == num2) 
+    {
+        printf("Both numbers are equal.\n");
+    } 
+    else
+    {
+        printf("Both numbers are not equal.\n");
+    }
+    return 0;
+}
+```
 ## OUTPUT
+
+![alt text](<WhatsApp Image 2025-10-21 at 15.41.04_b030603f.jpg>)
            
 ## RESULT
 
@@ -70,10 +88,24 @@ Write a C Program to convert the given string into lowercase.
 5.	Stop the program.
 
 ## PROGRAM
-
+```
+#include <stdio.h>
+#include <ctype.h>  
+int main()
+{
+    char str[100];
+    fgets(str, sizeof(str), stdin);  
+    for (int i = 0; str[i] != '\0'; i++) 
+    {
+        str[i] = tolower(str[i]);
+    }
+    printf("The string in lowercase is: %s\n", str);
+    return 0;
+}
+```
 ## OUTPUT
 
-
+![alt text](<WhatsApp Image 2025-10-21 at 15.41.16_03553742.jpg>)
 
 
 ## RESULT
@@ -95,11 +127,38 @@ Write a C Program to count the total number of words in a given string using do 
 6.	Stop the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
 
+int main() 
+{
+    char str[100];
+    int i = 0, count = 0;
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);  
+    if (str[0] != '\0') 
+    {  
+        do {
+            if (str[i] == ' ') 
+            {
+                count++;
+            }
+            i++;
+        } 
+        while (str[i] != '\0');
+    }
+    if (i > 1 && str[i-2] != ' ') 
+    {
+        count++;
+    }
+    printf("Total number of words: %d\n", count);
+    return 0;
+}
+```
 ## OUTPUT
 
 
-
+![alt text](<WhatsApp Image 2025-10-21 at 15.41.26_7ce0f4b7.jpg>)
 
 
 ## RESULT
@@ -129,10 +188,39 @@ Step 7: After the loop, check the value of flag:
 Step 8: End the program.
 
 ## PROGRAM
-
+```
+#include <stdio.h>
+int main() 
+{
+    char c1[100], c2[100];
+    int i = 0, flag = 0;
+    scanf("%[^\n]", c1);
+    scanf("%s", c2);
+    do 
+    {
+        if (c1[i] != c2[i]) 
+        {
+            flag = 1;
+            break; 
+        }
+        i++;
+    } 
+    while (c1[i] != '\0' || c2[i] != '\0'); 
+    if (flag == 0) 
+    {
+        printf("Strings are same.\n");
+    } 
+    else 
+    {
+        printf("Strings are not same.\n");
+    }
+    return 0;
+}
+```
 
 ## OUTPUT
- 
+![alt text](<WhatsApp Image 2025-10-21 at 15.41.35_27263a25.jpg>)
+
 
 ## RESULT
 Thus the C Program to compare two strings without using strcmp() has been executed successfully.
